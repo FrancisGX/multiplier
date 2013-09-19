@@ -34,5 +34,7 @@ class MultiplicationTest
 
     puts "Incorrect Answers:"
     incorrect_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
+
+    return nil
   end
 end
