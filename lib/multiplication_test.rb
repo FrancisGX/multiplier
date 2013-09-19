@@ -38,24 +38,24 @@ class MultiplicationTest
   end
 
   class Report
-    attr_reader :test
+    attr_reader :correct_answers, :incorrect_answers
 
     def initialize test
-      @test = test
+      @correct_answers, @incorrect_answers = test.correct_answers, test.incorrect_answers
     end
 
     def print
       puts "---------------- REPORT CARD ---------------"
-      puts "#{test.correct_answers.count} CORRECT ANSWERS".ljust 44, "-"
-      puts "#{test.incorrect_answers.count} INCORRECT ANSWERS".ljust 44, "-"
+      puts "#{correct_answers.count} CORRECT ANSWERS".ljust 44, "-"
+      puts "#{incorrect_answers.count} INCORRECT ANSWERS".ljust 44, "-"
       puts "--------------------------------------------"
 
       puts "Correct Answers:"
-      test.correct_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
+      correct_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
 
       puts "--------------------------------------------"
       puts "Incorrect Answers:"
-      test.incorrect_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
+      incorrect_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
 
       return nil
     end
