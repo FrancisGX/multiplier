@@ -46,8 +46,8 @@ class MultiplicationTest
 
     def print
       puts "---------------- REPORT CARD ---------------"
-      puts "#{correct_answers.count} CORRECT ANSWERS".ljust 44, "-"
-      puts "#{incorrect_answers.count} INCORRECT ANSWERS".ljust 44, "-"
+      puts "#{correct_answers.count} CORRECT ANSWERS ".ljust 44, "-"
+      puts "#{incorrect_answers.count} INCORRECT ANSWERS ".ljust 44, "-"
       puts "--------------------------------------------"
 
       puts "Correct Answers:"
