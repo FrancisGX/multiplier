@@ -23,4 +23,15 @@ class MultiplicationTest
       end
     end
   end
+
+  def report
+    puts "---------------- REPORT CARD ---------------"
+    puts "#{correct_answers.count} CORRECT ANSWERS"
+    puts "#{incorrect_answers.count} INCORRECT ANSWERS"
+    puts "--------------------------------------------"
+    puts "Correct Answers:"
+    puts correct_answers
+    puts "Incorrect Answers:"
+    puts incorrect_answers
+  end
 end
