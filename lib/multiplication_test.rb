@@ -45,14 +45,26 @@ class MultiplicationTest
     end
 
     def print
+      header
+      correct_problems
+      incorrect_problems
+      return nil
+    end
+
+    private
+
+    def header
       puts "---------------- REPORT CARD ---------------"
+    end
+
+    def correct_problems
       puts "#{correct_answers.count} CORRECT ANSWERS ".ljust 44, "-"
       correct_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
+    end
 
+    def incorrect_problems
       puts "#{incorrect_answers.count} INCORRECT ANSWERS ".ljust 44, "-"
       incorrect_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
-
-      return nil
     end
   end
 end
