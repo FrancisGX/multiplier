@@ -30,8 +30,9 @@ class MultiplicationTest
     puts "#{incorrect_answers.count} INCORRECT ANSWERS"
     puts "--------------------------------------------"
     puts "Correct Answers:"
-    puts correct_answers
+    correct_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
+
     puts "Incorrect Answers:"
-    puts incorrect_answers
+    incorrect_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
   end
 end
