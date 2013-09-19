@@ -11,17 +11,26 @@ class MultiplicationTest
   def start
     1..9.times do |x|
       puts "What is #{number} x #{x} ?"
+
       attempt = gets.chomp.to_i
       answer = number * x
 
       if attempt == answer
-        puts "Correct!"
-        correct_answers << "#{number} x #{x} = #{answer}"
+        correct x, answer
       else
-        puts "False!"
-        incorrect_answers << "#{number} x #{x} != #{attempt}"
+        incorrect x, attempt
       end
     end
+  end
+
+  def correct x, answer
+    puts "Correct!"
+    correct_answers << "#{number} x #{x} = #{answer}"
+  end
+
+  def incorrect x, attempt
+    puts "Incorrect!"
+    incorrect_answers << "#{number} x #{x} != #{attempt}"
   end
 
   def report
