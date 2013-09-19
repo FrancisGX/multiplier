@@ -47,14 +47,9 @@ class MultiplicationTest
     def print
       puts "---------------- REPORT CARD ---------------"
       puts "#{correct_answers.count} CORRECT ANSWERS ".ljust 44, "-"
-      puts "#{incorrect_answers.count} INCORRECT ANSWERS ".ljust 44, "-"
-      puts "--------------------------------------------"
-
-      puts "Correct Answers:"
       correct_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
 
-      puts "--------------------------------------------"
-      puts "Incorrect Answers:"
+      puts "#{incorrect_answers.count} INCORRECT ANSWERS ".ljust 44, "-"
       incorrect_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
 
       return nil
