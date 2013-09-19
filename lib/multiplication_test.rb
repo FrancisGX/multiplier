@@ -34,16 +34,29 @@ class MultiplicationTest
   end
 
   def report
-    puts "---------------- REPORT CARD ---------------"
-    puts "#{correct_answers.count} CORRECT ANSWERS"
-    puts "#{incorrect_answers.count} INCORRECT ANSWERS"
-    puts "--------------------------------------------"
-    puts "Correct Answers:"
-    correct_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
+    Report.new(self).print
+  end
 
-    puts "Incorrect Answers:"
-    incorrect_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
+  class Report
+    attr_reader :test
 
-    return nil
+    def initialize test
+      @test = test
+    end
+
+    def print
+      puts "---------------- REPORT CARD ---------------"
+      puts "#{test.correct_answers.count} CORRECT ANSWERS"
+      puts "#{test.incorrect_answers.count} INCORRECT ANSWERS"
+      puts "--------------------------------------------"
+      puts "Correct Answers:"
+      test.correct_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
+
+      puts "Incorrect Answers:"
+      test.incorrect_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
+
+      return nil
+    end
   end
 end
+
