@@ -59,12 +59,16 @@ class MultiplicationTest
 
     def correct_problems
       puts "#{correct_answers.count} CORRECT ANSWERS ".ljust 44, "-"
-      correct_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
+      format correct_answers
     end
 
     def incorrect_problems
       puts "#{incorrect_answers.count} INCORRECT ANSWERS ".ljust 44, "-"
-      incorrect_answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
+      format incorrect_answers
+    end
+
+    def format answers
+      answers.each_with_index { |a, n| puts "#{n+1}.) #{a}" }
     end
   end
 end
