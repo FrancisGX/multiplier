@@ -9,7 +9,7 @@ class MultiplicationTest
   end
 
   def start
-    1..9.times do |x|
+    numbers.each do |x|
       puts "What is #{number} x #{x} ?"
 
       attempt = gets.chomp.to_i
@@ -21,6 +21,10 @@ class MultiplicationTest
         incorrect x, attempt
       end
     end
+  end
+
+  def numbers
+    Array 0..9
   end
 
   def correct x, answer
