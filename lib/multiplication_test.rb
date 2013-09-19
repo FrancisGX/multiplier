@@ -4,11 +4,11 @@ class MultiplicationTest
 
   def initialize number
     @number = number
-    @correct_answers = 0
-    @incorrect_answers = 0
+    @correct_answers = []
+    @incorrect_answers = []
   end
 
-  def go
+  def start
     1..9.times do |x|
       puts "What is #{number} x #{x} ?"
       attempt = gets.chomp.to_i
@@ -16,8 +16,10 @@ class MultiplicationTest
 
       if attempt == answer
         puts "Correct!"
+        correct_answers << "#{number} x #{x} = #{answer}"
       else
         puts "False!"
+        incorrect_answers << "#{number} x #{x} != #{attempt}"
       end
     end
   end
